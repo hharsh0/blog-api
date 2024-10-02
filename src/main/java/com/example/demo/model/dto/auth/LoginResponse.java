@@ -1,34 +1,24 @@
 package com.example.demo.model.dto.auth;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
+import java.util.UUID;
+
+@Data
+@Builder
+@AllArgsConstructor
 public class LoginResponse {
+
+    private String email;
+
+    private UUID id;
+
+    private String message;
+
     private String token;
 
     private long expiresIn;
 
-    public String getToken() {
-        return token;
-    }
-
-    public LoginResponse setToken(String token) {
-        this.token = token;
-        return this;
-    }
-
-    public long getExpiresIn() {
-        return expiresIn;
-    }
-
-    public LoginResponse setExpiresIn(long expiresIn) {
-        this.expiresIn = expiresIn;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "LoginResponse{" +
-                "token='" + token + '\'' +
-                ", expiresIn=" + expiresIn +
-                '}';
-    }
 }
